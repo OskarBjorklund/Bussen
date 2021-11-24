@@ -26,14 +26,15 @@ class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
     som skapas ur klassen har ett namn och en ålder, samt metoder för att returnera
     alternativt modifiera respektive attribut. """
-    def __init__(self, namn, efternamn, ålder):
+    def __init__(self, namn, efternamn, kön, ålder):
         self.namn = namn
         self.efternamn = efternamn
+        self.kön = kön
         self.ålder = ålder
 
     # Strängrepresentation av objektet.
     def __str__(self):
-        return f"Det här är {self.namn} {self.efternamn}. Hen är {self.ålder} år gammal."
+        return f"Det här är {self.namn} {self.efternamn}. {self.kön} är {self.ålder} år gammal."
     
     # Setters
     def setNamn(self, nyttNamn):
@@ -41,6 +42,9 @@ class Person():
     
     def setEfternamn(self, nyttEfternamn):
         self.namn = nyttEfternamn
+
+     def setKön(self, nyttKön):
+        self.kön = nyttKön
 
     def setÅlder(self, nyÅlder):
         self.ålder = nyÅlder
@@ -51,6 +55,9 @@ class Person():
     
     def getEfternamn(self):
         return self.efternamn
+    
+    def getKön(self):
+        return self.kön
 
     def getÅlder(self):
         return self.ålder
@@ -60,8 +67,8 @@ class Person():
 # Lägger till en ny person i bussen.
 def plockaUpp(antal_passagerare):
     for i in range(antal_passagerare):
-        förnamn_i_funktion = förnamn[rand.randint(0, 100)]
-        efternamn_i_funktion = efternamn[rand.randint(0, 100)]
+        förnamn_i_funktion = förnamn[rand.randint(0, 101)] #Ändra till variabel
+        efternamn_i_funktion = efternamn[rand.randint(0, 100)] #Ändra till variabel
         ålder = rand.randint(0, 110)
         en_person = Person(förnamn_i_funktion, efternamn_i_funktion, ålder)
         passagerare.append(en_person)
@@ -147,6 +154,7 @@ def main():
         elif menyVal == "4":
             print(f" Den sammanlagda åldern hos de {len(passagerare)} passagerare är {sammanlagdÅlder()}.")
         elif menyVal == "5":
+            print(passagerare)
             pass
         elif menyVal == "6":
             pass
