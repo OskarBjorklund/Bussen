@@ -16,10 +16,12 @@ path = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(path,"förefternamn.json")) as f:
     förefternamn = json.load(f)
 
-förnamn = förefternamn["namn"]
+kvinnligt_förnamn = förefternamn["namn_kvinna"]
+manligt_förnamn = förefternamn["namn_man"]
 efternamn = förefternamn["efternamn"]
 
-passagerare = []
+kvinnliga_passagerare = []
+manliga_passagerare = []
 
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
@@ -67,16 +69,26 @@ class Person():
 # Lägger till en ny person i bussen.
 def plockaUpp(antal_passagerare):
     for i in range(antal_passagerare):
-        förnamn_i_funktion = förnamn[rand.randint(0, 101)] #Ändra till variabel
-        efternamn_i_funktion = efternamn[rand.randint(0, 100)] #Ändra till variabel
-        ålder = rand.randint(0, 110)
-        en_person = Person(förnamn_i_funktion, efternamn_i_funktion, ålder)
-        passagerare.append(en_person)
+        if rand.random() >= 0.5:
+            förnamn_i_funktion = manligt_förnamn[rand.randint(0, len(manligt_förnamn))]
+            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn))]
+            ålder = rand.randint(0, 110)
+            en_man = Person(förnamn_i_funktion, efternamn_i_funktion, "Han", ålder)
+            manliga_passagerare.append(en_man)
+        else:
+            förnamn_i_funktion = kvinnligt_förnamn[rand.randint(0, len(kvinnligt_förnamn))]
+            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn))]
+            ålder = rand.randint(0, 110)
+            en_kvinna = Person(förnamn_i_funktion, efternamn_i_funktion, "Hon", ålder)
+            kvinnliga_passagerare.append(en_kvinna)
 
 # Avlägsnar en person från bussen.
 def gåAv(antal_passagerare):
     for i in range(antal_passagerare):
-        passagerare.pop(rand.randint(0, len(passagerare)-1))
+        if rand.random() >= 0.5:
+            manliga_passagerare.pop(rand.randint(0, len(manliga_passagerare)-1))
+        else:
+            kvinnliga_passagerare.pop(rand.randint(0, len(kvinnliga_passagerare)-1))
     
 
 # Listar alla passagerare på bussen.
