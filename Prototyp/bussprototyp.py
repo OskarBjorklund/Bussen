@@ -43,9 +43,9 @@ class Person():
         self.namn = nyttNamn
     
     def setEfternamn(self, nyttEfternamn):
-        self.namn = nyttEfternamn
+        self.efternamn = nyttEfternamn
 
-     def setKön(self, nyttKön):
+    def setKön(self, nyttKön):
         self.kön = nyttKön
 
     def setÅlder(self, nyÅlder):
@@ -93,12 +93,12 @@ def gåAv(antal_passagerare):
 
 # Listar alla passagerare på bussen.
 def skrivUt():
-    for i, person in enumerate(passagerare):
+    for i, person in enumerate(kvinnliga_passagerare+manliga_passagerare):
         print(f"{i+1}. {person}")
 
 # Skriver ut den sammanlagda åldern på passagerarna.
 def sammanlagdÅlder():
-    return sum([person.ålder for person in passagerare])      
+    return sum([person.ålder for person in kvinnliga_passagerare and manliga_passagerare])      
    
 
 # Skriver ut medelåldern på passagerarna i bussen.
@@ -148,25 +148,24 @@ def main():
             plockaUpp(antal)
             print(f"{antal} ny(a) passagerare steg ombord bussen.")
         elif menyVal == "2":
-            if len(passagerare) > 10:
+            if len(kvinnliga_passagerare)+len(manliga_passagerare) > 10:
                 antal = rand.randint(0, 10)
                 gåAv(antal)
                 print(f"{antal} passagerare steg av bussen.")
-            elif len(passagerare) >= 1:
-                antal = rand.randint(0, len(passagerare))
+            elif len(kvinnliga_passagerare)+len(manliga_passagerare) >= 1:
+                antal = rand.randint(0, len(kvinnliga_passagerare)+len(manliga_passagerare))
                 gåAv(antal)
                 print(f"{antal} passagerare steg av bussen.")
             else:
                 print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "3":
-            if len(passagerare) >= 1:
+            if len(kvinnliga_passagerare)+len(manliga_passagerare)>= 1:
                 skrivUt()
             else:
                 print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "4":
-            print(f" Den sammanlagda åldern hos de {len(passagerare)} passagerare är {sammanlagdÅlder()}.")
+            print(f" Den sammanlagda åldern hos de {len(manliga_passagerare)+len(kvinnliga_passagerare)} passagerare är {sammanlagdÅlder()}.")
         elif menyVal == "5":
-            print(passagerare)
             pass
         elif menyVal == "6":
             pass
