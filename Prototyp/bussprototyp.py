@@ -6,6 +6,9 @@ Datum:
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista.
 """
+
+# -*- coding: latin-1 -*-
+
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
 import json
@@ -20,8 +23,7 @@ kvinnligt_förnamn = förefternamn["namn_kvinna"]
 manligt_förnamn = förefternamn["namn_man"]
 efternamn = förefternamn["efternamn"]
 
-kvinnliga_passagerare = []
-manliga_passagerare = []
+passagerare = []
 
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
@@ -74,31 +76,28 @@ def plockaUpp(antal_passagerare):
             efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn)-1)]
             ålder = rand.randint(0, 110)
             en_man = Person(förnamn_i_funktion, efternamn_i_funktion, "Han", ålder)
-            manliga_passagerare.append(en_man)
+            passagerare.append(en_man)
         else:
             förnamn_i_funktion = kvinnligt_förnamn[rand.randint(0, len(kvinnligt_förnamn)-1)]
             efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn)-1)]
             ålder = rand.randint(0, 110)
             en_kvinna = Person(förnamn_i_funktion, efternamn_i_funktion, "Hon", ålder)
-            kvinnliga_passagerare.append(en_kvinna)
+            passagerare.append(en_kvinna)
 
 # Avlägsnar en person från bussen.
 def gåAv(antal_passagerare):
     for i in range(antal_passagerare):
-        if rand.random() >= 0.5:
-            manliga_passagerare.pop(rand.randint(0, len(manliga_passagerare)-1))
-        else:
-            kvinnliga_passagerare.pop(rand.randint(0, len(kvinnliga_passagerare)-1))
+            passagerare.pop(rand.randint(0, len(passagerare)-1))
     
 
 # Listar alla passagerare på bussen.
 def skrivUt():
-    for i, person in enumerate(kvinnliga_passagerare+manliga_passagerare):
+    for i, person in enumerate(passagerare):
         print(f"{i+1}. {person}")
 
 # Skriver ut den sammanlagda åldern på passagerarna.
 def sammanlagdÅlder():
-    return sum([person.ålder for person in kvinnliga_passagerare and manliga_passagerare])      
+    return sum([person.ålder for person in passagerare])      
    
 
 # Skriver ut medelåldern på passagerarna i bussen.
@@ -148,23 +147,23 @@ def main():
             plockaUpp(antal)
             print(f"{antal} ny(a) passagerare steg ombord bussen.")
         elif menyVal == "2":
-            if len(kvinnliga_passagerare)+len(manliga_passagerare) > 10:
+            if len(passagerare) > 10:
                 antal = rand.randint(0, 10)
                 gåAv(antal)
                 print(f"{antal} passagerare steg av bussen.")
-            elif len(kvinnliga_passagerare)+len(manliga_passagerare) >= 1:
-                antal = rand.randint(0, len(kvinnliga_passagerare)+len(manliga_passagerare))
+            elif len(passagerare) >= 1:
+                antal = rand.randint(0, len(passagerare))
                 gåAv(antal)
                 print(f"{antal} passagerare steg av bussen.")
             else:
                 print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "3":
-            if len(kvinnliga_passagerare)+len(manliga_passagerare)>= 1:
+            if len(passagerare)>= 1:
                 skrivUt()
             else:
                 print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "4":
-            print(f" Den sammanlagda åldern hos de {len(manliga_passagerare)+len(kvinnliga_passagerare)} passagerare är {sammanlagdÅlder()}.")
+            print(f" Den sammanlagda åldern hos de {len(passagerare)} passagerare är {sammanlagdÅlder()}.")
         elif menyVal == "5":
             pass
         elif menyVal == "6":
