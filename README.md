@@ -6,3 +6,6 @@ Checklista:
 Fixa kön, alltså se till programmet fungerar med kön.
 
 Fixa statistiska funktioner.
+
+fixa fel inmatining
+
