@@ -70,14 +70,14 @@ class Person():
 def plockaUpp(antal_passagerare):
     for i in range(antal_passagerare):
         if rand.random() >= 0.5:
-            förnamn_i_funktion = manligt_förnamn[rand.randint(0, len(manligt_förnamn))]
-            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn))]
+            förnamn_i_funktion = manligt_förnamn[rand.randint(0, len(manligt_förnamn)-1)]
+            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn)-1)]
             ålder = rand.randint(0, 110)
             en_man = Person(förnamn_i_funktion, efternamn_i_funktion, "Han", ålder)
             manliga_passagerare.append(en_man)
         else:
-            förnamn_i_funktion = kvinnligt_förnamn[rand.randint(0, len(kvinnligt_förnamn))]
-            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn))]
+            förnamn_i_funktion = kvinnligt_förnamn[rand.randint(0, len(kvinnligt_förnamn)-1)]
+            efternamn_i_funktion = efternamn[rand.randint(0, len(efternamn)-1)]
             ålder = rand.randint(0, 110)
             en_kvinna = Person(förnamn_i_funktion, efternamn_i_funktion, "Hon", ålder)
             kvinnliga_passagerare.append(en_kvinna)
