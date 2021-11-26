@@ -9,3 +9,4 @@ Fixa statistiska funktioner.
 
 fixa fel inmatining
 
+max 25 i listan
