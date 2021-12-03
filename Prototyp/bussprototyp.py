@@ -97,18 +97,26 @@ def skrivUt():
 
 # Skriver ut den sammanlagda åldern på passagerarna.
 def sammanlagdÅlder():
-    return sum([person.ålder for person in passagerare])      
+    return sum([person.ålder for person in passagerare])   
+
+       
    
 
 # Skriver ut medelåldern på passagerarna i bussen.
 def medelÅlder():
-    return sum([person.ålder for person in passagerare])      
+    return sum([person.ålder for person in passagerare])/len(passagerare)
     
 
 # Skriver ut personen som är äldst på bussen.
 def äldst():
-    return
-
+    äldsta_personer = []
+    äldsta_person = max([person.ålder for person in passagerare])
+    for person in passagerare:
+        if person.ålder == äldsta_person:
+            äldsta_personer.append(person)
+    
+    for i, person in enumerate(äldsta_personer):
+        print(f"{i+1}. {person}")
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
 def busSort():
     return
@@ -177,9 +185,12 @@ def main():
         elif menyVal == "4":
             print(f" Den sammanlagda åldern hos de {len(passagerare)} passagerare är {sammanlagdÅlder()}.")
         elif menyVal == "5":
-            pass
+            print(f" Medelåldern hos de {len(passagerare)} passagerare är {medelÅlder()}.")
         elif menyVal == "6":
-            pass
+            if len(passagerare)>= 1:
+                äldst()
+            else:
+                print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "7":
             pass
         elif menyVal == "8":
