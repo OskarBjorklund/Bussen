@@ -102,7 +102,8 @@ def sammanlagdÅlder():
 
 # Skriver ut medelåldern på passagerarna i bussen.
 def medelÅlder():
-    return
+    return sum([person.ålder for person in passagerare])      
+    
 
 # Skriver ut personen som är äldst på bussen.
 def äldst():
@@ -144,8 +145,19 @@ def main():
 
         if menyVal == "1":
             antal = rand.randint(0, 10)
-            plockaUpp(antal)
-            print(f"{antal} ny(a) passagerare steg ombord bussen.")
+            if len(passagerare) == 25:
+                print("Bussen är för närvarande full.")
+            elif antal + len(passagerare) > 24:
+                for i in range(antal):
+                    plockaUpp(1)
+                    if len(passagerare) == 25:
+                        print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {i} kunde stiga på.")
+                        break
+                    else:
+                        continue
+            else:
+                plockaUpp(antal)
+                print(f"{antal} ny(a) passagerare steg ombord bussen.")
         elif menyVal == "2":
             if len(passagerare) > 10:
                 antal = rand.randint(0, 10)
