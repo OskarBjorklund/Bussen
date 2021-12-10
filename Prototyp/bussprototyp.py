@@ -164,9 +164,9 @@ def peta(petad):
             print("Bort från mig din pedofil!")
         else:
             print("HJÄLP!!! Jag blir antastad av busschauffören!!!")
-    elif petad_i_funktion.ålder <= 18:
+    elif petad_i_funktion.ålder >= 15 or petad_i_funktion.ålder <= 18:
         if petad_i_funktion.kön == "Han":
-            print("Yelaen Tarekhek") # Damn your entire history
+            print("Yelaen Tarekhek")  # Damn your entire history
         else:
             print("Din knullbulle, vad håller du på med!")
     elif petad_i_funktion.ålder <= 26:
@@ -174,26 +174,33 @@ def peta(petad):
             print("Kille reaktion")
         else:
             print("Jag ringer polisen!!!")
-    elif petad_i_funktion.ålder <= :
+    elif petad_i_funktion.ålder <= 30:
         if petad_i_funktion.kön == "Han":
-            print("Kille reaktion")
+            print("Papi vad gör du?")
         else:
             print("Tjej reaktion")
-    elif petad_i_funktion.ålder <= ÅLDER:
+    elif petad_i_funktion.ålder <= 55:
         if petad_i_funktion.kön == "Han":
             print("Kille reaktion")
         else:
             print("Tjej reaktion")
     elif petad_i_funktion.ålder <= 80:
         if petad_i_funktion.kön == "Han":
-            print("Ojj, hej ditt lilla kex, du kanske vill hjälpa mig hem?")
+            print("Ojj, hej ditt lilla kex, du kanske vill hjälpa mig hem?") 
         else:
             print("Vad håller du på med?")
-    elif petad_i_funktion.ålder <= 110:
+    elif petad_i_funktion.ålder <= 90 or  petad_i_funktion.ålder > 80:
         if petad_i_funktion.kön == "Han":
-            print("Nämen vad i hela friden tror du att du håller på med unga man?")
+            print("Jag kanske har Alzheimers men jag har åtminstone inte Alzheimers")
+        else:
+            print("Har du problem med gammla män!")
+    elif petad_i_funktion.ålder <= 110 or petad_i_funktion.ålder >= 90:
+        if petad_i_funktion.kön == "Han":
+            print("Nämen du din jävel, nu ska du lyssna, fasiken vad du ska lyssna. Så gör man inte här i denna foster land. Nu ska du fannnn få käft i dig jävla ouppfostrad... Fy fan, tappade andan.")
         else:
             print(f"Snälla låta en gammal dam vara, jag är faktiskt {petad_i_funktion.ålder} år.")
+    
+    
         
     
 
