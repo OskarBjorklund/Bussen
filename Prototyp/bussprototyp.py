@@ -89,7 +89,6 @@ def gåAv(antal_passagerare):
     for i in range(antal_passagerare):
             passagerare.pop(rand.randint(0, len(passagerare)-1))
     
-
 # Listar alla passagerare på bussen.
 def skrivUt():
     for i, person in enumerate(passagerare):
@@ -99,14 +98,10 @@ def skrivUt():
 def sammanlagdÅlder():
     return sum([person.ålder for person in passagerare])   
 
-       
-   
-
 # Skriver ut medelåldern på passagerarna i bussen.
 def medelÅlder():
     return sum([person.ålder for person in passagerare])/len(passagerare)
     
-
 # Skriver ut personen som är äldst på bussen.
 def äldst():
     äldsta_personer = []
@@ -119,7 +114,38 @@ def äldst():
         print(f"{i+1}. {person}")
 # Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
 def busSort():
-    return
+
+    sorteringsVal = ""
+
+    while sorteringsVal != "q":
+
+        print(
+            """
+                                            --- SORTERINGSMENY ---
+                        Välkommen till sorteringsmenyn. Välj ett av alternativen nedan:
+                1. Sortera efter förnamn                            2. Sortera efter efternamn
+                3. Sortera efter ålder                              4. Sortera efter kön
+                5. Omvänd passagerare                               q. Återgå till huvudmenyn
+            ---------------------------------------------------------------------------------------
+            """)
+        
+        sorteringsVal = input("-> ")
+
+        if sorteringsVal == "1":
+            passagerare.sort(key=lambda x: x.namn)
+            print("Bussen är nu sorterad efter förnamn")
+        elif sorteringsVal == "2":
+            passagerare.sort(key=lambda x: x.efternamn)
+            print("Bussen är nu sorterad efter efternamn")
+        elif sorteringsVal == "3":
+            passagerare.sort(key=lambda x: x.ålder)
+            print("Bussen är nu sorterad efter åldern")
+        elif sorteringsVal == "4":
+            passagerare.sort(key=lambda x: x.kön)
+            print("Bussen är nu sorterad efter kön")
+        elif sorteringsVal == "5":
+            passagerare.reverse()
+            print("Passagerare har nu blivit omvända")
 
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.
 def hittaPassagerare(åldersSpann):
@@ -192,7 +218,7 @@ def main():
             else:
                 print("Inga passagerare befinner sig på bussen.")
         elif menyVal == "7":
-            pass
+            busSort()
         elif menyVal == "8":
             pass
 
