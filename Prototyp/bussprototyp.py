@@ -154,8 +154,48 @@ def hittaPassagerare(åldersSpann):
 # petar på en passagerare. Skriver ut en text som beskriver passagerarens
 # reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
 # variera från person till person, t.ex. beroende på ålder.
-def peta(passagerare):
-    return
+def peta(petad):
+    petad_i_funktion = passagerare[petad-1]
+
+    if petad_i_funktion.ålder <= 4:
+        print("Gogo gaga")
+    elif petad_i_funktion.ålder <= 12:
+        if petad_i_funktion.kön == "Han":
+            print("Bort från mig din pedofil!")
+        else:
+            print("HJÄLP!!! Jag blir antastad av busschauffören!!!")
+    elif petad_i_funktion.ålder <= 18:
+        if petad_i_funktion.kön == "Han":
+            print("Yelaen Tarekhek") # Damn your entire history
+        else:
+            print("Din knullbulle, vad håller du på med!")
+    elif petad_i_funktion.ålder <= 26:
+        if petad_i_funktion.kön == "Han":
+            print("Kille reaktion")
+        else:
+            print("Jag ringer polisen!!!")
+    elif petad_i_funktion.ålder <= :
+        if petad_i_funktion.kön == "Han":
+            print("Kille reaktion")
+        else:
+            print("Tjej reaktion")
+    elif petad_i_funktion.ålder <= ÅLDER:
+        if petad_i_funktion.kön == "Han":
+            print("Kille reaktion")
+        else:
+            print("Tjej reaktion")
+    elif petad_i_funktion.ålder <= 80:
+        if petad_i_funktion.kön == "Han":
+            print("Ojj, hej ditt lilla kex, du kanske vill hjälpa mig hem?")
+        else:
+            print("Vad håller du på med?")
+    elif petad_i_funktion.ålder <= 110:
+        if petad_i_funktion.kön == "Han":
+            print("Nämen vad i hela friden tror du att du håller på med unga man?")
+        else:
+            print(f"Snälla låta en gammal dam vara, jag är faktiskt {petad_i_funktion.ålder} år.")
+        
+    
 
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
@@ -221,6 +261,13 @@ def main():
             busSort()
         elif menyVal == "8":
             pass
+        elif menyVal == "9":
+            if len(passagerare)>= 1:
+                skrivUt()
+                petad_passagerare = int(input("Välj en passagerare att peta på. -> "))
+                peta(petad_passagerare)
+            else:
+                print("Inga passagerare befinner sig på bussen.")
 
 print(
 """
