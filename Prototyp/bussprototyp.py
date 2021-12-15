@@ -171,19 +171,19 @@ def peta(petad):
             print("Din knullbulle, vad håller du på med!")
     elif petad_i_funktion.ålder <= 26:
         if petad_i_funktion.kön == "Han":
-            print("Kille reaktion")
+            print("Papi så gör man inte.")
         else:
             print("Jag ringer polisen!!!")
     elif petad_i_funktion.ålder <= 30:
         if petad_i_funktion.kön == "Han":
             print("Papi vad gör du?")
         else:
-            print("Tjej reaktion")
+            print("Släpp mig din perver!")
     elif petad_i_funktion.ålder <= 55:
         if petad_i_funktion.kön == "Han":
-            print("Kille reaktion")
+            print("Upp på dig mannen, jag är inte bög")
         else:
-            print("Tjej reaktion")
+            print("Herregud jesus, vad håller du på med!")
     elif petad_i_funktion.ålder <= 80:
         if petad_i_funktion.kön == "Han":
             print("Ojj, hej ditt lilla kex, du kanske vill hjälpa mig hem?") 
