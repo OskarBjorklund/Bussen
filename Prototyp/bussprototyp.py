@@ -191,47 +191,29 @@ def peta(petad):
             print("HJÄLP!!! Jag blir antastad av busschauffören!!!")
     elif petad_i_funktion.ålder >= 15 or petad_i_funktion.ålder <= 18:
         if petad_i_funktion.kön == "Han":
-<<<<<<< HEAD
             print("Yelaen Tarekhek!!")  # Damn your entire history
-=======
-            print("Yelaen Tarekhek")  # Damn your entire history
->>>>>>> bb3534e73aeb0ad692f9cb4d15911b7be83f3d59
         else:
             print("Din knullbulle, vad håller du på med!")
     elif petad_i_funktion.ålder <= 26:
         if petad_i_funktion.kön == "Han":
-<<<<<<< HEAD
             print("Vad tror du att du håller på med?")
-=======
-            print("Papi så gör man inte.")
->>>>>>> bb3534e73aeb0ad692f9cb4d15911b7be83f3d59
         else:
             print("Jag ringer polisen!!!")
     elif petad_i_funktion.ålder <= 30:
         if petad_i_funktion.kön == "Han":
             print("Papi vad gör du?")
         else:
-<<<<<<< HEAD
             print("Bort med tassarna ditt äckel")
     elif petad_i_funktion.ålder <= 55:
         if petad_i_funktion.kön == "Han":
             print("Sluta peta på mig din idiot!")
         else:
             print("Vad gör du din gubbstrut?")
-=======
-            print("Släpp mig din perver!")
-    elif petad_i_funktion.ålder <= 55:
-        if petad_i_funktion.kön == "Han":
-            print("Upp på dig mannen, jag är inte bög")
-        else:
-            print("Herregud jesus, vad håller du på med!")
->>>>>>> bb3534e73aeb0ad692f9cb4d15911b7be83f3d59
     elif petad_i_funktion.ålder <= 80:
         if petad_i_funktion.kön == "Han":
             print("Ojj, hej ditt lilla kex, du kanske vill hjälpa mig hem?") 
         else:
             print("Vad håller du på med?")
-<<<<<<< HEAD
     elif petad_i_funktion.ålder <= 90:
         if petad_i_funktion.kön == "Han":
             print("Jag kanske har Alzheimers men jag har åtminstone inte Alzheimers")
@@ -242,23 +224,6 @@ def peta(petad):
             print("Nämen du din jävel, nu ska du lyssna, fasiken vad du ska lyssna. Så gör man inte här i denna foster land. Nu ska du fannnn få käft i dig jävla ouppfostrad... Fy fan, tappade andan.")
         else:
             print(f"Snälla låta en gammal dam vara, jag är faktiskt {petad_i_funktion.ålder} år.")
-=======
-    elif petad_i_funktion.ålder <= 90 or  petad_i_funktion.ålder > 80:
-        if petad_i_funktion.kön == "Han":
-            print("Jag kanske har Alzheimers men jag har åtminstone inte Alzheimers")
-        else:
-            print("Har du problem med gammla män!")
-    elif petad_i_funktion.ålder <= 110 or petad_i_funktion.ålder >= 90:
-        if petad_i_funktion.kön == "Han":
-            print("Nämen du din jävel, nu ska du lyssna, fasiken vad du ska lyssna. Så gör man inte här i denna foster land. Nu ska du fannnn få käft i dig jävla ouppfostrad... Fy fan, tappade andan.")
-        else:
-            print(f"Snälla låta en gammal dam vara, jag är faktiskt {petad_i_funktion.ålder} år.")
-    
-    
-        
-    
-
->>>>>>> bb3534e73aeb0ad692f9cb4d15911b7be83f3d59
 # ------------------------------ Huvudprogram --------------------------------- #
 def main():
     menyVal = ""
