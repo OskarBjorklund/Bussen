@@ -351,7 +351,7 @@ def main():
 
                     if petad_passagerare.isdigit():
                         if int(petad_passagerare) != 0:
-                            if int(petad_passagerare) <= len(passagerare)-1:
+                            if int(petad_passagerare) <= len(passagerare):
                                 clear_screen()
                                 peta(int(petad_passagerare))
                                 input(
@@ -359,6 +359,7 @@ def main():
 
                                 Tryck på valfri knapp för att fortsätta...
                                 """)
+                                break
                                 main()
                             else:
                                 clear_screen()
