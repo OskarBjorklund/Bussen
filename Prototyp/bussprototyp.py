@@ -255,22 +255,33 @@ def main():
 
         if menyVal == "1":
             antal = rand.randint(0, 10)
-            if len(passagerare) == 25:
-                clear_screen()
-                print("Bussen är för närvarande full.")
-            elif antal + len(passagerare) > 25:
-                for i in range(antal):
-                    plockaUpp(1)
-                    if len(passagerare) == 25:
-                        clear_screen()
-                        print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {i+1} kunde stiga på.")
-                        break
-                    else:
-                        continue
+            # if len(passagerare) == 25:
+            #     clear_screen()
+            #     print("Bussen är för närvarande full.")
+            # elif antal + len(passagerare) > 25:
+            #     for i in range(antal):
+            #         plockaUpp(1)
+            #         if len(passagerare) == 25:
+            #             clear_screen()
+            #             print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {i+1} kunde stiga på.")
+            #             break
+            # else:
+            #     plockaUpp(antal)
+            #     clear_screen()
+            #     print(f"{antal} ny(a) passagerare steg ombord bussen.")
+
+            lediga_platser = 25 - len(passagerare)
+            if lediga_platser > 0:
+                if lediga_platser >= antal:
+                    antal_påstigna = antal
+                    print(f"{antal_påstigna} ny(a) passagerare steg ombord bussen.")
+                else:
+                    antal_påstigna = lediga_platser
+                    print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {antal_påstignaS} kunde stiga på.")
+                plockaUpp(antal_påstigna)
             else:
-                plockaUpp(antal)
-                clear_screen()
-                print(f"{antal} ny(a) passagerare steg ombord bussen.")
+                print("Bussen är för närvarande full.")
+
         elif menyVal == "2":
             if len(passagerare) > 10:
                 antal = rand.randint(0, 10)
