@@ -180,7 +180,7 @@ def hittaPassagerare(åldersSpann1, åldersSpann2):
 # reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
 # variera från person till person, t.ex. beroende på ålder.
 def peta(petad):
-    petad_i_funktion = passagerare[petad-1]
+    petad_i_funktion = passagerare[petad]
 
     if petad_i_funktion.ålder <= 4:
         print("Gogo gaga")
@@ -189,7 +189,7 @@ def peta(petad):
             print("Bort från mig din pedofil!")
         else:
             print("HJÄLP!!! Jag blir antastad av busschauffören!!!")
-    elif petad_i_funktion.ålder >= 15 or petad_i_funktion.ålder <= 18:
+    elif petad_i_funktion.ålder <= 18:
         if petad_i_funktion.kön == "Han":
             print("Yelaen Tarekhek!!")  # Damn your entire history
         else:
@@ -353,7 +353,7 @@ def main():
                         if int(petad_passagerare) != 0:
                             if int(petad_passagerare) <= len(passagerare):
                                 clear_screen()
-                                peta(int(petad_passagerare))
+                                peta(int(petad_passagerare)-1)
                                 input(
                                 """
 
