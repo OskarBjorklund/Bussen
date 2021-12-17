@@ -277,7 +277,7 @@ def main():
                     print(f"{antal_påstigna} ny(a) passagerare steg ombord bussen.")
                 else:
                     antal_påstigna = lediga_platser
-                    print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {antal_påstignaS} kunde stiga på.")
+                    print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {antal_påstigna} kunde stiga på.")
                 plockaUpp(antal_påstigna)
             else:
                 print("Bussen är för närvarande full.")
@@ -402,7 +402,8 @@ def main():
             else:
                 clear_screen()
                 print("Inga passagerare befinner sig på bussen.")
-        else:
+                
+        elif menyVal != "q":
             clear_screen()
             print("Felaktig inmatning.")
 main()
