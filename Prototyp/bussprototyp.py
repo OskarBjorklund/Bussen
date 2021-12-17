@@ -258,12 +258,12 @@ def main():
             if len(passagerare) == 25:
                 clear_screen()
                 print("Bussen är för närvarande full.")
-            elif antal + len(passagerare) > 24:
+            elif antal + len(passagerare) > 25:
                 for i in range(antal):
                     plockaUpp(1)
                     if len(passagerare) == 25:
                         clear_screen()
-                        print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {i} kunde stiga på.")
+                        print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {i+1} kunde stiga på.")
                         break
                     else:
                         continue
