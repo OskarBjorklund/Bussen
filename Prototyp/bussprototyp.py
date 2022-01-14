@@ -157,7 +157,7 @@ def busSort():
             passagerare.reverse()
             clear_screen()
             print("Passagerare har nu blivit omvända")
-        else:
+        elif sorteringsVal != "q":
             clear_screen()
             print("Felaktig inmatning.")
 
