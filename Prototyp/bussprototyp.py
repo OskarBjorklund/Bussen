@@ -339,7 +339,8 @@ def main():
 
                                 Tryck på valfri knapp för att fortsätta...
                                 """)
-                                break
+                                main()
+                                clear_screen()
                             else:
                                 clear_screen()
                                 print("Felaktig inmatning.")
