@@ -375,7 +375,7 @@ def main():
 
                                 Tryck på valfri knapp för att fortsätta...
                                 """)
-                                break
+                                clear_screen()
                                 main()
                             else:
                                 clear_screen()
