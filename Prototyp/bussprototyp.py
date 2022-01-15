@@ -14,6 +14,7 @@ import random as rand
 import json
 import os
 from os import system
+from tkinter import Menu
 # ------------------------------ Listor --------------------------------------- #
 
 path = os.path.abspath(os.path.dirname(__file__))
@@ -160,6 +161,7 @@ def busSort():
         elif sorteringsVal != "q":
             clear_screen()
             print("Felaktig inmatning.")
+    clear_screen()
 
 # Skriver ut en lista på alla passagerare inom ett visst åldersspann.
 def hittaPassagerare(åldersSpann1, åldersSpann2):
@@ -193,7 +195,7 @@ def peta(petad):
         if petad_i_funktion.kön == "Han":
             print("Yelaen Tarekhek!!")  # Damn your entire history
         else:
-            print("Din knullbulle, vad håller du på med!")
+            print("Din knullbulle, vad håller du på med!?")
     elif petad_i_funktion.ålder <= 26:
         if petad_i_funktion.kön == "Han":
             print("Vad tror du att du håller på med?")
@@ -274,12 +276,15 @@ def main():
             if lediga_platser > 0:
                 if lediga_platser >= antal:
                     antal_påstigna = antal
+                    clear_screen()
                     print(f"{antal_påstigna} ny(a) passagerare steg ombord bussen.")
                 else:
                     antal_påstigna = lediga_platser
+                    clear_screen()
                     print(f"Det fanns {antal} passagerare på busshålsplatsen men endast {antal_påstigna} kunde stiga på.")
                 plockaUpp(antal_påstigna)
             else:
+                clear_screen()
                 print("Bussen är för närvarande full.")
 
         elif menyVal == "2":
@@ -334,18 +339,17 @@ def main():
 
                                 Tryck på valfri knapp för att fortsätta...
                                 """)
-                                main()
+                                break
                             else:
                                 clear_screen()
                                 print("Felaktig inmatning.")
-                                continue
                     else:
                         clear_screen()
                         print("Felaktig inmatning.")
-                        continue
             else:
                 clear_screen()
                 print("Inga passagerare befinner sig på bussen.")
+            main()
         elif menyVal == "9":
             if len(passagerare)>= 1:
                 clear_screen()
@@ -406,4 +410,5 @@ def main():
         elif menyVal != "q":
             clear_screen()
             print("Felaktig inmatning.")
+clear_screen()
 main()
