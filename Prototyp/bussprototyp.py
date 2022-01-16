@@ -14,7 +14,6 @@ import random as rand
 import json
 import os
 from os import system
-from tkinter import Menu
 # ------------------------------ Listor --------------------------------------- #
 
 path = os.path.abspath(os.path.dirname(__file__))
