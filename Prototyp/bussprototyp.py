@@ -24,9 +24,15 @@ with open(os.path.join(path,"förefternamn.json")) as f:
 kvinnligt_förnamn = förefternamn["namn_kvinna"]
 manligt_förnamn = förefternamn["namn_man"]
 efternamn = förefternamn["efternamn"]
+'''
+   listor för passagerarens namn och efternamn,
+   men även könsnamnet då man kan indentifiera och hen är han eller hon
+'''
 
 passagerare = []
-
+'''
+lista för passagerare
+'''
 # ---------------------------- Klassdefinitioner ------------------------------ #
 class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
