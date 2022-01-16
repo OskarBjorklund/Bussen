@@ -326,27 +326,28 @@ def main():
             busSort()
         elif menyVal == "8":
             if len(passagerare)>= 1:
+                clear_screen()
                 while True:
                     åldersSpann1 = input("Ange lägsta åldern på passagerare du vill hitta -> ")
                     if åldersSpann1.isdigit():
-                        while True:
-                            åldersSpann2 = input("Ange högsta åldern på passagerare du vill hitta -> ")
-                            if åldersSpann2.isdigit():
-                                clear_screen()
-                                hittaPassagerare(int(åldersSpann1),int(åldersSpann2))
-                                input(
-                                """
-
-                                Tryck på valfri knapp för att fortsätta...
-                                """)
-                                main()
-                                clear_screen()
-                            else:
-                                clear_screen()
-                                print("Felaktig inmatning.")
+                        break
                     else:
                         clear_screen()
                         print("Felaktig inmatning.")
+                while True:
+                    åldersSpann2 = input("Ange högsta åldern på passagerare du vill hitta -> ")
+                    if åldersSpann2.isdigit():
+                        break    
+                    else:
+                        clear_screen()
+                        print("Felaktig inmatning.")
+                clear_screen()
+                hittaPassagerare(int(åldersSpann1), int(åldersSpann2))
+                input(
+                    """
+
+                    Tryck på valfri knapp för att fortsätta...
+                    """)
             else:
                 clear_screen()
                 print("Inga passagerare befinner sig på bussen.")
@@ -377,6 +378,7 @@ def main():
                                 """)
                                 clear_screen()
                                 main()
+                                break
                             else:
                                 clear_screen()
                                 print("Felaktig inmatning.")
