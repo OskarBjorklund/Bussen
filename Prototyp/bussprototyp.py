@@ -8,6 +8,7 @@ lagrar passagerare i en lista.
 """
 
 # -*- coding: latin-1 -*-
+#selfi
 
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
