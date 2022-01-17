@@ -37,13 +37,16 @@ class Person():
     """ Person är en klass för att representera personer i bussen. Varje objekt
     som skapas ur klassen har ett namn och en ålder, samt metoder för att returnera
     alternativt modifiera respektive attribut. """
+
+    '''Objektens egenskap'''
     def __init__(self, namn, efternamn, kön, ålder):
         self.namn = namn
         self.efternamn = efternamn
         self.kön = kön
         self.ålder = ålder
+        
 
-    # Strängrepresentation av objektet.
+    '''Strängrepresentation av objektet.'''
     def __str__(self):
         return f"Det här är {self.namn} {self.efternamn}. {self.kön} är {self.ålder} år gammal."
     
@@ -75,10 +78,12 @@ class Person():
 
 # ------------------------- Funktionsdefinitioner ---------------------------- #
 
-# Lägger till en ny person i bussen.
+
 def clear_screen():
     system("cls || clear")
 
+    
+'''Lägger till en ny person i bussen.'''
 def plockaUpp(antal_passagerare):
     for i in range(antal_passagerare):
         if rand.random() >= 0.5:
@@ -94,25 +99,25 @@ def plockaUpp(antal_passagerare):
             en_kvinna = Person(förnamn_i_funktion, efternamn_i_funktion, "Hon", ålder)
             passagerare.append(en_kvinna)
 
-# Avlägsnar en person från bussen.
+'''Avlägsnar en person från bussen.'''
 def gåAv(antal_passagerare):
     for i in range(antal_passagerare):
             passagerare.pop(rand.randint(0, len(passagerare)-1))
     
-# Listar alla passagerare på bussen.
+'''Listar alla passagerare på bussen.'''
 def skrivUt():
     for i, person in enumerate(passagerare):
         print(f"{i+1}. {person}")
 
-# Skriver ut den sammanlagda åldern på passagerarna.
+'''Skriver ut den sammanlagda åldern på passagerarna.'''
 def sammanlagdÅlder():
     return sum([person.ålder for person in passagerare])   
 
-# Skriver ut medelåldern på passagerarna i bussen.
+'''Skriver ut medelåldern på passagerarna i bussen.'''
 def medelÅlder():
     return sum([person.ålder for person in passagerare])/len(passagerare)
     
-# Skriver ut personen som är äldst på bussen.
+'''Skriver ut personen som är äldst på bussen.'''
 def äldst():
     äldsta_personer = []
     äldsta_person = max([person.ålder for person in passagerare])
@@ -122,7 +127,9 @@ def äldst():
     
     for i, person in enumerate(äldsta_personer):
         print(f"{i+1}. {person}")
-# Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.
+
+'''Sorterar bussen, antingen efter namn i bokstavsordning eller efter ålder.'''
+
 def busSort():
 
     sorteringsVal = ""
@@ -168,7 +175,8 @@ def busSort():
             print("Felaktig inmatning.")
     clear_screen()
 
-# Skriver ut en lista på alla passagerare inom ett visst åldersspann.
+'''Skriver ut en lista på alla passagerare inom ett visst åldersspann.'''
+
 def hittaPassagerare(åldersSpann1, åldersSpann2):
     ålderSpann_personer = []
     for person in passagerare:
@@ -183,9 +191,9 @@ def hittaPassagerare(åldersSpann1, åldersSpann2):
         for i, person in enumerate(ålderSpann_personer):
             print(f"{i+1}. {person}")
 
-# petar på en passagerare. Skriver ut en text som beskriver passagerarens
-# reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna
-# variera från person till person, t.ex. beroende på ålder.
+'''petar på en passagerare. Skriver ut en text som beskriver passagerarens 
+   reaktion när denne blir petad på. För lite svårare uppgift kan reaktionerna 
+   variera från person till person, t.ex. beroende på ålder.'''
 def peta(petad):
     petad_i_funktion = passagerare[petad]
 
