@@ -1,14 +1,13 @@
 # ------------------------------- Information --------------------------------- #
 """
 Titel: Bussen
-Författare:
-Datum:
+Författare: Oskar Björklund, Teeshk Nader, Siavash Razmjooei, Matteus Liss
+Datum: 9/11 2021 till 1/19 2022
 Det här är ett program för hantering av passagerare på en buss. Programmet
 lagrar passagerare i en lista.
 """
 
 # -*- coding: latin-1 -*-
-#selfi
 
 # ------------------------- Biblioteksimportering ----------------------------- #
 import random as rand
